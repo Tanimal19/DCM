@@ -1,0 +1,6 @@
+[submodule "DCManager-frontend"]
+	path = DCManager-frontend
+	url = https://github.com/C-W-Z/DCManager-frontend.git
+[submodule "DCmanager-backend"]
+	path = DCmanager-backend
+	url = https://github.com/GaryLee93/DCmanager-backend.git
