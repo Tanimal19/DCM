@@ -1,6 +1,7 @@
 # DCManager
 
 ## Project Structure
+
 ```
 .
 ├── DCM-backend/
@@ -22,7 +23,6 @@
 └── README.md
 ```
 
-
 ## Docker Compose
 
 ```
@@ -33,7 +33,7 @@ docker-compose up -d
 docker-compose up -d --build
 
 重新建構並重啟指定服務
-docker-compose up -d --build <service> 
+docker-compose up -d --build <service>
 
 查看 container 狀態
 docker-compose ps
