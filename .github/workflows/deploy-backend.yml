@@ -1,6 +1,7 @@
 name: "Build and Deploy Backend Service"
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - '"master"'
