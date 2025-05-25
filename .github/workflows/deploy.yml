@@ -9,8 +9,8 @@ on:
 env:
   PROJECT_ID: "cloud-native-457203"
   REGION: "asia-east1"
-  BACKEND_SERVICE: "dcm/backend"
-  FRONTEND_SERVICE: "dcm/frontend"
+  BACKEND_SERVICE: "backend"
+  FRONTEND_SERVICE: "frontend"
   WORKLOAD_IDENTITY_PROVIDER: "projects/566579704717/locations/global/workloadIdentityPools/github/providers/my-repo"
 
 jobs:
