@@ -6,7 +6,7 @@ https://frontend-566579704717.asia-east1.run.app/
 
 ```
 .
-├── backend/
+├── backend/ (submodule)
 │   ├── db/
 │   │   ├── database.py
 │   │   ├── Dockerfile (for db)
@@ -15,7 +15,7 @@ https://frontend-566579704717.asia-east1.run.app/
 │   ├── Dockerfile (for backend)
 │   ├── requirements.txt
 │   └── ...
-├── frontend/
+├── frontend/ (submodule)
 │   ├── src/
 │   │   ├── main.tsx
 │   │   └── ...
