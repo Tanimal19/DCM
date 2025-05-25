@@ -29,6 +29,7 @@ jobs:
         name: "Authenticate to Google Cloud"
         uses: "google-github-actions/auth@f112390a2df9932162083945e46d439060d66ec2" # google-github-actions/auth@v2
         with:
+          project_id: "${{ env.PROJECT_ID }}"
           workload_identity_provider: "${{ env.WORKLOAD_IDENTITY_PROVIDER }}"
 
       # BEGIN - Docker auth and build
@@ -41,7 +42,7 @@ jobs:
 
       - name: "Build and Push Container"
         run: |-
-          DOCKER_TAG="$${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}"
+          DOCKER_TAG="${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}"
           docker build --tag "${DOCKER_TAG}" ./frontend -f ./frontend/Dockerfile.production
           docker push "${DOCKER_TAG}"
       - name: "Deploy to Cloud Run"
