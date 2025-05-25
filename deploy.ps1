@@ -26,12 +26,12 @@ gcloud config set project $projectId
 # === Build Docker images ===
 Write-Host "🐳 Building Docker images..."
 if ($service -eq "both") {
-    docker build -t $backendImage ./DCmanager-backend
-    docker build -t $frontendImage ./DCManager-frontend -f ./DCManager-frontend/Dockerfile.production
+    docker build -t $backendImage ./backend
+    docker build -t $frontendImage ./frontend -f ./frontend/Dockerfile.production
 } elseif ($service -eq "frontend") {
-    docker build -t $backendImage ./DCmanager-backend
+    docker build -t $backendImage ./backend
 } elseif ($service -eq "backend") {
-    docker build -t $frontendImage ./DCManager-frontend -f ./DCManager-frontend/Dockerfile.production
+    docker build -t $frontendImage ./frontend -f ./frontend/Dockerfile.production
 }
 
 # === Push Docker images ===
