@@ -23,7 +23,9 @@
 └── README.md
 ```
 
-## Docker Compose
+# Usage
+
+## Docker Compose (Local)
 
 ```bash
 # 啟動所有服務（背景）
@@ -45,7 +47,7 @@ docker-compose logs -f <service>
 docker-compose down
 ```
 
-## GCP Deploy
+# GCP Deploy
 
 ```bash
 # build image

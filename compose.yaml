@@ -1,7 +1,7 @@
 services:
   frontend:
     build:
-      context: ./DCManager-frontend
+      context: ./frontend
       dockerfile: ./Dockerfile
     container_name: frontend
     ports:
@@ -14,7 +14,7 @@ services:
 
   backend:
     build:
-      context: ./DCmanager-backend
+      context: ./backend
       dockerfile: ./Dockerfile
     container_name: backend
     ports:
@@ -35,7 +35,7 @@ services:
 
   db:
     build:
-      context: ./DCmanager-backend/db
+      context: ./backend/db
       dockerfile: ./Dockerfile
     container_name: database
     environment:
