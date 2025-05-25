@@ -1,10 +1,10 @@
-# DCManager
+## DCManager
 
-## Project Structure
+### Project Structure
 
 ```
 .
-├── DCM-backend/
+├── backend/
 │   ├── db/
 │   │   ├── database.py
 │   │   ├── Dockerfile (for db)
@@ -13,21 +13,20 @@
 │   ├── Dockerfile (for backend)
 │   ├── requirements.txt
 │   └── ...
-├── DCM-frontend/
+├── frontend/
 │   ├── src/
 │   │   ├── main.tsx
 │   │   └── ...
 │   ├── Dockerfile (for frontend)
 │   └── ...
+├── deploy.ps1
 ├── compose.yaml
 └── README.md
 ```
 
-# Usage
-
 ## Docker Compose (Local)
 
-```bash
+```
 # 啟動所有服務（背景）
 docker-compose up -d
 
@@ -49,27 +48,6 @@ docker-compose down
 
 # GCP Deploy
 
-```bash
-# build image
-docker build -t asia-east1-docker.pkg.dev/cloud-native-457203/dcm/backend ./DCmanager-backend
-docker build -t asia-east1-docker.pkg.dev/cloud-native-457203/dcm/fronted ./DCManager-frontend
-
-# push container
-docker push asia-east1-docker.pkg.dev/cloud-native-457203/dcm/backend
-docker push asia-east1-docker.pkg.dev/cloud-native-457203/dcm/frontend
-
-# deploy to gcp
-gcloud run deploy backend-service `
-  --image gcr.io/cloud-native-457203/dcm/backend `
-  --set-env-vars DB_NAME=datacenter_management,DB_USER=postgres,DB_PASSWORD=postgres,DB_HOST=35.236.182.119,PORT=8080 `
-  --add-cloudsql-instances=cloud-native-457203:asia-east1:dcm-postgresql-db `
-  --region=asia-east1 `
-  --platform managed `
-  --allow-unauthenticated
-
-gcloud run deploy frontend-service `
-  --image asia-east1-docker.pkg.dev/cloud-native-457203/dcm/frontend `
-  --region=asia-east1 `
-  --platform managed `
-  --allow-unauthenticated
+```
+./deploy.ps1 <frontend | backend | both>
 ```
