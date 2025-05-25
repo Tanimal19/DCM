@@ -46,7 +46,7 @@ jobs:
         env:
           SERVICE: "${{ env.BACKEND_SERVICE }}"
         run: |-
-          DOCKER_TAG="${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.BACKEND_SERVICE }}:${{ github.sha }}"
+          DOCKER_TAG="${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/dcm/${{ env.BACKEND_SERVICE }}:${{ github.sha }}"
           docker build --tag "${DOCKER_TAG}" --file ./backend/Dockerfile ./backend
           docker push "${DOCKER_TAG}"
 
@@ -55,7 +55,7 @@ jobs:
         with:
           service: "${{ env.BACKEND_SERVICE }}"
           region: "${{ env.REGION }}"
-          image: "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.BACKEND_SERVICE }}:${{ github.sha }}"
+          image: "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/dcm/${{ env.BACKEND_SERVICE }}:${{ github.sha }}"
 
       # BEGIN - Docker auth and build for FRONTEND_SERVICE
       - name: "Docker Auth (Frontend)"
@@ -69,7 +69,7 @@ jobs:
         env:
           SERVICE: "${{ env.FRONTEND_SERVICE }}"
         run: |-
-          DOCKER_TAG="${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.FRONTEND_SERVICE }}:${{ github.sha }}"
+          DOCKER_TAG="${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/dcm/${{ env.FRONTEND_SERVICE }}:${{ github.sha }}"
           docker build --tag "${DOCKER_TAG}" --file ./frontend/Dockerfile.production ./frontend
           docker push "${DOCKER_TAG}"
 
@@ -78,4 +78,4 @@ jobs:
         with:
           service: "${{ env.FRONTEND_SERVICE }}"
           region: "${{ env.REGION }}"
-          image: "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.FRONTEND_SERVICE }}:${{ github.sha }}"
+          image: "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/dcm/${{ env.FRONTEND_SERVICE }}:${{ github.sha }}"
