@@ -30,14 +30,14 @@ jobs:
 
       - id: "auth"
         name: "Authenticate to Google Cloud"
-        uses: "google-github-actions/auth@f112390a2df9932162083945e46d439060d66ec2" # google-github-actions/auth@v2
+        uses: "google-github-actions/auth@v2" # google-github-actions/auth@v2
         with:
           project_id: "${{ env.PROJECT_ID }}"
           workload_identity_provider: "${{ env.WORKLOAD_IDENTITY_PROVIDER }}"
 
       # BEGIN - Docker auth and build for BACKEND_SERVICE
       - name: "Docker Auth (Backend)"
-        uses: "docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567" # docker/login-action@v3
+        uses: "docker/login-action@v3" # docker/login-action@v3
         with:
           username: "oauth2accesstoken"
           password: "${{ steps.auth.outputs.auth_token }}"
@@ -52,7 +52,7 @@ jobs:
           docker push "${DOCKER_TAG}"
 
       - name: "Deploy Backend to Cloud Run"
-        uses: "google-github-actions/deploy-cloudrun@33553064113a37d688aa6937bacbdc481580be17" # google-github-actions/deploy-cloudrun@v2
+        uses: "google-github-actions/deploy-cloudrun@v2" # google-github-actions/deploy-cloudrun@v2
         with:
           service: "${{ env.BACKEND_SERVICE }}"
           region: "${{ env.REGION }}"
@@ -60,7 +60,7 @@ jobs:
 
       # BEGIN - Docker auth and build for FRONTEND_SERVICE
       - name: "Docker Auth (Frontend)"
-        uses: "docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567" # docker/login-action@v3
+        uses: "docker/login-action@v3" # docker/login-action@v3
         with:
           username: "oauth2accesstoken"
           password: "${{ steps.auth.outputs.auth_token }}"
@@ -75,7 +75,7 @@ jobs:
           docker push "${DOCKER_TAG}"
 
       - name: "Deploy Frontend to Cloud Run"
-        uses: "google-github-actions/deploy-cloudrun@33553064113a37d688aa6937bacbdc481580be17" # google-github-actions/deploy-cloudrun@v2
+        uses: "google-github-actions/deploy-cloudrun@v2" # google-github-actions/deploy-cloudrun@v2
         with:
           service: "${{ env.FRONTEND_SERVICE }}"
           region: "${{ env.REGION }}"
