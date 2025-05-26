@@ -5,6 +5,12 @@ Final Project for NTU Cloud Native 2025
 
 https://frontend-566579704717.asia-east1.run.app/
 
+> [!IMPORTANT]
+> This repo using git submodule, so don't just `git clone`, use this:
+> ```
+> git clone git@github.com:Tanimal19/DCM.git --recursive
+> ```
+
 ### Project Structure
 
 ```
