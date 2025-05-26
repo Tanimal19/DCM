@@ -1,5 +1,8 @@
 ## DCManager
 
+Data Center Management System  
+Final Project for NTU Cloud Native 2025
+
 https://frontend-566579704717.asia-east1.run.app/
 
 ### Project Structure
@@ -48,7 +51,7 @@ docker-compose logs -f <service>
 docker-compose down
 ```
 
-# GCP Deploy
+## GCP Deploy
 
 ```
 ./deploy.ps1 <frontend | backend | both>
