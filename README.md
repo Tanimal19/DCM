@@ -1,36 +1,13 @@
-## DCManager
+# DCManager
 
 Data Center Management System  
-Final Project for NTU Cloud Native 2025
+Final Project for NTU Cloud Native 2025  
 
-### Project Structure
-
-```
-.
-├── backend/ (submodule)
-│   ├── db/
-│   │   ├── database.py
-│   │   ├── Dockerfile (for db)
-│   │   └── ...
-│   ├── app.py
-│   ├── Dockerfile (for backend)
-│   ├── requirements.txt
-│   └── ...
-├── frontend/ (submodule)
-│   ├── src/
-│   │   ├── main.tsx
-│   │   └── ...
-│   ├── Dockerfile (for frontend)
-│   └── ...
-├── deploy.ps1
-├── compose.yaml
-└── README.md
-```
-
-## Demo
-
-Demo site: (Demo site is deprecated, since we don't have enough GCP credits 😢, you could still run this project by cloning it.)  
+Demo site: (The Demo site is deprecated since we don't have enough GCP credits 😢, but you could still run this project by cloning it.)  
 Demo video: 
+https://github.com/user-attachments/assets/2c4b798a-3395-4a9d-bb01-318d48cd9e0e
+
+
 
 ### UI Preview
 <div align="center">
