@@ -5,6 +5,7 @@ Final Project for NTU Cloud Native 2025
 
 Demo site: (The Demo site is deprecated since we don't have enough GCP credits 😢, but you could still run this project by cloning it.)  
 Demo video: 
+
 https://github.com/user-attachments/assets/2c4b798a-3395-4a9d-bb01-318d48cd9e0e
 
 
