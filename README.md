@@ -4,10 +4,11 @@ Data Center Management System
 Final Project for NTU Cloud Native 2025
 
 https://frontend-566579704717.asia-east1.run.app/  
-(The site is deprecated, since I don't have enough GCP credits 😢, you could still git clone to use it.)
+(The site is deprecated, since we don't have enough GCP credits 😢, you could still git clone to use it.)
 
 > [!IMPORTANT]
 > This repo using git submodule, so don't just `git clone`, use this:
+>
 > ```
 > git clone git@github.com:Tanimal19/DCM.git --recursive
 > ```
