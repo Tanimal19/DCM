@@ -3,16 +3,6 @@
 Data Center Management System  
 Final Project for NTU Cloud Native 2025
 
-https://frontend-566579704717.asia-east1.run.app/  
-(The site is deprecated, since we don't have enough GCP credits 😢, you could still git clone to use it.)
-
-> [!IMPORTANT]
-> This repo using git submodule, so don't just `git clone`, use this:
->
-> ```
-> git clone git@github.com:Tanimal19/DCM.git --recursive
-> ```
-
 ### Project Structure
 
 ```
@@ -37,8 +27,46 @@ https://frontend-566579704717.asia-east1.run.app/
 └── README.md
 ```
 
-## Docker Compose (Local)
+## Demo
 
+Demo site: (Demo site is deprecated, since we don't have enough GCP credits 😢, you could still run this project by cloning it.)  
+Demo video: 
+
+### UI Preview
+<div align="center">
+  
+  **Login page**
+  <img src="assets/login.png">
+  
+  **Datacenter overview**
+  <img src="assets/overview.png">
+  
+  **Host overview**
+  <img src="assets/host-overview.png">
+  
+  **Moving the host in the rack / between racks**
+  <div>
+    <img src="assets/dragging-host1.png" height="600px" ><img src="assets/move-host.png" height="400px" >
+  </div>
+  <br/>
+  
+  **Service overview**
+  <img src="assets/service-overview.png">
+  
+  **Serivce view**
+  <img src="assets/service-view.png">
+</div>
+
+## Run This Project
+> [!IMPORTANT]
+> This repo using git submodule, so don't just `git clone`, use this:
+>
+> ```
+> git clone git@github.com:Tanimal19/DCM.git --recursive
+> ```
+
+
+### Docker Compose (Local)
 ```
 # 啟動所有服務（背景）
 docker-compose up -d
@@ -59,8 +87,8 @@ docker-compose logs -f <service>
 docker-compose down
 ```
 
-## GCP Deploy
-
+### GCP Deploy
+(gitHub action will automatically deploy, use this only if you want to deploy manually)
 ```
 ./deploy.ps1 <frontend | backend | both>
 ```
